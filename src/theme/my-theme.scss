@@ -1,0 +1,118 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+//gama colores
+$my-primary: (
+    50 : #e1f2fe,
+    100 : #b3defc,
+    200 : #81c8fa,
+    300 : #4eb1f8,
+    400 : #28a1f7,
+    500 : #0290f5,
+    600 : #0288f4,
+    700 : #017df2,
+    800 : #0173f0,
+    900 : #0161ee,
+    A100 : #ffffff,
+    A200 : #e1ebff,
+    A400 : #aecaff,
+    A700 : #95b9ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$my-accent: (
+    50 : #e1e7eb,
+    100 : #b3c3ce,
+    200 : #809bae,
+    300 : #4d728d,
+    400 : #275474,
+    500 : #01365c,
+    600 : #013054,
+    700 : #01294a,
+    800 : #012241,
+    900 : #001630,
+    A100 : #699bff,
+    A200 : #3679ff,
+    A400 : #0357ff,
+    A700 : #004de8,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+/* For use in src/lib/core/theming/_palette.scss */
+$my-warn: (
+    50 : #fff9eb,
+    100 : #fff1ce,
+    200 : #ffe8ae,
+    300 : #ffde8d,
+    400 : #ffd774,
+    500 : #ffd05c,
+    600 : #ffcb54,
+    700 : #ffc44a,
+    800 : #ffbe41,
+    900 : #ffb330,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fff1db,
+    A700 : #ffe7c2,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+//paleta de colores
+$my-palette-primary: mat.define-palette($my-primary);
+$my-palette-accent: mat.define-palette($my-accent);
+
+// TEMA PROPIO
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-palette-primary,
+   accent: $my-palette-accent
+ )
+));
+
+// APLICAR NUESTRO TEMA A ANGULAR
+@include mat.all-component-themes($my-theme);

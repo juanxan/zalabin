@@ -1,0 +1,17 @@
+export enum TypeVehicle{
+    CargaTransporteMercanciaPropia = 'carga_transporte_mercancia_propia',
+    CargaTransporteMercanciaTerceros = 'carga_transporte_mercancia_terceros',
+    CargaCarroceriaEspecial = 'carga_carroceria_especial',
+    CargaTransporteCombustible = 'carga_transporte_combustible',
+    TrailerRemolque = 'trailer_remolque',
+    UtilitarioAlquilerEmpresasPasajerosMercancia = 'utilitario_alquiler_empresas_pasajeros_mercancia',
+    UtilitarioTransporteUrbanaMercanciaPropia = 'utilitario_transporte_urbana_mercancia_propia',
+    UtilitarioTransporteUrbanaMercanciaTerceros = 'utilitario_transporte_urbana_mercancia_terceros',
+    TaxiHotelero = 'taxi_hotelero',
+    TaxiUrbano = 'taxi_urbano',
+    TransportePasajerosEscolar = 'transporte_pasajeros_escolar',
+    TransportePasajerosTripulaciones = 'transporte_pasajeros_tripulaciones',
+    TransportePasajerosUrbano = 'transporte_pasajeros_urbano',
+    TransportePasajerosIntermunicipal = 'transporte_pasajeros_intermunicipal',
+    TransportePasajerosInterdepartamental = 'transporte_pasajeros_interdepartamental',
+}

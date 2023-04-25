@@ -1,0 +1,106 @@
+  .mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  .container-form-ng mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+  .ng-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        &__list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            &--item{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            &--label{
+                width: 41.1%;
+                font-weight: 800;
+                font-size: 16px;
+                display: flex;
+                gap: 8px;
+                flex-direction: row;
+                align-items: center;
+                span{
+                    border: 1px solid #A5A5A5;
+                    border-radius: 20px;
+                    color: #A5A5A5;
+                    width: 22px;
+                    height: 22px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 400;
+                }
+            }
+            &--input{
+                width: 29.4%;
+                
+            }
+            &--inputAll{
+                width: 59.9%;
+                
+            }
+            &--description{
+                width: 29.5%;
+            }
+        }
+        &__title{
+            font-weight: 400;
+            font-size: 23px;
+            color: #333333;
+        }
+        &__km{
+            margin-top: 23px;
+            color:#01365C;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        &__btn{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 46px;
+            &--back{
+                font-size: 17px;
+                text-decoration: underline;
+                color: #01365C;
+                font-weight: 800;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            &--next{
+                width: 260px;
+                background-color: #01365C;
+                height: 60px;
+                color: #FFD05C;
+                font-size: 17px;
+                font-weight: 800;
+                border-radius: 10px;
+                box-shadow: #00000029;
+            }
+        }
+  }
+  .ng-cotiza{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

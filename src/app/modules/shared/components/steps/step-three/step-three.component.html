@@ -1,0 +1,114 @@
+<section *ngIf="reference && !first" class="ng-card">
+  <h2 class="ng-form-container__title">Búsqueda por referencia</h2>
+  <app-vehicule *ngFor="let vehiculos of vehicles" [vehicle]="vehiculos" (eventToFirst)="toFirst($event)"></app-vehicule>
+  <div class="ng-form-container__btn">
+    <button mat-button matStepperPrevious class="ng-form-container__btn--back">
+      <mat-icon aria-hidden="false" (click)="backVehicle()" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>    
+      Atrás</button>
+  </div>
+</section>
+<div *ngIf="!reference && !first" class="ng-card">
+  <h2 class="ng-form-container__title">¿Este es tu vehículo?</h2>
+  <app-vehicule  [vehicle]="vehicle" (eventToFirst)="toFirst($event)"></app-vehicule>
+  <button mat-button matStepperPrevious (click)="backVehicle()" class="ng-form-container__btn--back">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>    
+    Atrás</button>
+</div>
+
+<section *ngIf="first">
+  <form [formGroup]="thirdFormGroup" class="ng-form-container">
+    <h2 class="ng-form-container__title">Información adicional</h2>
+    <div class="ng-form-container__list">
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+                <span>1</span> Precio del Vehículo
+            </div>
+            <div class="ng-form-container__list--input">
+              <mat-form-field appearance="outline" floatLabel="always">
+                <input matInput formControlName="vehiclePrice" type="number" class="example-right-align" placeholder="0">
+                <span matTextPrefix>$&nbsp;</span>
+                <span matTextSuffix>COP</span>
+              </mat-form-field>
+            </div>
+            <div class="ng-form-container__list--description">
+                <span></span>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>2</span>¿Tipo de placa?
+            </div>
+            <div class="ng-form-container__list--inputAll">
+              <mat-radio-group formControlName="placaType" aria-label="Select an option">
+                <mat-radio-button  class="custom-radio" value="particular">Particular</mat-radio-button>
+                <mat-radio-button  class="custom-radio" value="publico">Público</mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>3</span>¿Tipo de uso?
+            </div>
+            <div class="ng-form-container__list--inputAll">
+              <mat-form-field  appearance="outline">
+                <mat-label>¿Tipo de uso?</mat-label>
+                <mat-select formControlName="useType">
+                  <mat-option *ngFor="let type of use_type" [value]="type.value">{{type.label}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>4</span>Valor adicional en accesorios
+            </div>
+            <div class="ng-form-container__list--input">
+              <mat-form-field appearance="outline" floatLabel="always">
+                <input matInput formControlName="accessoriesPrice" type="number" class="example-right-align" placeholder="0">
+                <span matTextPrefix>$&nbsp;</span>
+                <span matTextSuffix>COP</span>
+              </mat-form-field>
+            </div>
+            <div class="ng-form-container__list--description">
+                <span>*Ingresa 0 si el vehículo no tiene accesorios</span>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>5</span>Ciudad de circulación
+            </div>
+            <div class="ng-form-container__list--inputAll">
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Busca tu ciudad</mat-label>
+                <input type="text" matInput  [formControl]="myControl" [matAutocomplete]="auto" required>
+                <mat-icon matSuffix>search</mat-icon>
+                <mat-autocomplete #auto="matAutocomplete"  [displayWith]="displayFn" (optionSelected)='setMunicipality($event.option.value)'>
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option.description}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item"  *ngIf="reference && first">
+          <div class="ng-form-container__list--label">
+            <span>6</span>¿Vehículo 0km en concesionario?
+          </div>
+          <div class="ng-form-container__list--inputAll">
+            <mat-radio-group formControlName="concesionario" aria-label="Select an option">
+              <mat-radio-button  class="custom-radio" value="true">Si</mat-radio-button>
+              <mat-radio-button  class="custom-radio" value="false">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+      </div>
+    </div>
+    <div class="ng-form-container__btn">
+        <button (click)="backVehicleReference()" mat-button  class="ng-form-container__btn--back">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>    
+          Atrás</button>
+        <button mat-button matStepperNext (click)="nextStep()" [disabled]="thirdFormGroup.invalid" class="ng-form-container__btn--next">Continuar</button>
+      </div>
+  </form>
+</section>
+
+

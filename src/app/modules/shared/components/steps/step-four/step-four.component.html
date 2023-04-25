@@ -1,0 +1,122 @@
+<section >
+  <form [formGroup]="fourFormGroup" class="ng-form-container">
+    <h2 class="ng-form-container__title">Información adicional</h2>
+    <div class="ng-form-container__list">
+      <div class="ng-form-container__list--item">
+        <div class="ng-form-container__list--label">
+          <span>1</span>Nombre(s)
+        </div>
+        <div class="ng-form-container__list--inputAll">
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre(s)</mat-label>
+            <input class="ng-step-input" matInput formControlName="name" placeholder="Escribe tu Nombre(s)" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>2</span>Apellido(s)
+            </div>
+            <div class="ng-form-container__list--inputAll">
+              <mat-form-field appearance="outline">
+                <mat-label>Apellido(s)</mat-label>
+                <input class="ng-step-input" matInput formControlName="familyname" placeholder="Escribe tu Apellido(s)" required>
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>3</span>Género
+            </div>
+            <div class="ng-form-container__list--inputAll">
+              <mat-radio-group formControlName="genres" aria-label="Select an option">
+                <mat-radio-button  class="custom-radio" value="M">Masculino</mat-radio-button>
+                <mat-radio-button  class="custom-radio" value="F">Femenino</mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>4</span>Tipo de documento
+            </div>
+            <div class="ng-form-container__list--inputAll">
+              <mat-form-field appearance="outline">
+                <mat-label>Selecciona un tipo de identificación</mat-label>
+                <mat-select formControlName="typeDocument">
+                  <mat-option *ngFor="let identificacion of IdentificationType" [value]="identificacion.code">{{identificacion.description}}</mat-option>
+                </mat-select>
+                <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+            </mat-form-field>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+          <div class="ng-form-container__list--label">
+            <span>5</span>Identificación
+          </div>
+          <div class="ng-form-container__list--inputAll">
+            <mat-form-field appearance="outline">
+              <mat-label>Identificación</mat-label>
+              <input class="ng-step-input" matInput formControlName="document" placeholder="Escribe tu número de identificación" required>
+            </mat-form-field>
+          </div>
+      </div>
+      <div class="ng-form-container__list--item">
+        <div class="ng-form-container__list--label">
+          <span>6</span>Fecha de nacimiento
+        </div>
+        <div class="ng-form-container__list--inputAll">
+          <p-calendar [maxDate]="maxDate" formControlName="birthdayDate" dateFormat="yy-mm-dd" [inputStyle]="{'width':'100%'}" [style]="{'width':'100%'}" [showIcon]="true" [readonlyInput]="true"></p-calendar>              
+        </div>
+    </div>
+    <div class="ng-form-container__list--item">
+      <div class="ng-form-container__list--label">
+        <span>7</span>Ocupación
+      </div>
+      <div class="ng-form-container__list--inputAll">
+        <mat-form-field appearance="outline">
+          <mat-label>Selecciona tu ocupación</mat-label>
+          <mat-select formControlName="Occupation">
+            <mat-option *ngFor="let identificacion of OccupationType" [value]="identificacion.code">{{identificacion.description}}</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+      </mat-form-field>
+      </div>
+  </div>
+  <h2 class="ng-form-container__title">Información del propietario</h2>
+        <div class="ng-form-container__list--item">
+            <div class="ng-form-container__list--label">
+              <span>1</span>Número de celular
+            </div>
+            <div class="ng-form-container__list--inputAll">
+              <mat-form-field appearance="outline">
+                <mat-label>Número de celular</mat-label>
+                <mat-icon matPrefix>phone_iphone</mat-icon>
+                <input class="ng-step-input" matInput type="number" formControlName="tel" placeholder="Escribe un número de celular" required>
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="ng-form-container__list--item">
+          <div class="ng-form-container__list--label">
+            <span>2</span>Correo
+          </div>
+          <div class="ng-form-container__list--inputAll">
+            <mat-form-field appearance="outline">
+              <mat-icon matPrefix>mail_outline</mat-icon>
+              <mat-label>Correo</mat-label>
+              <input class="ng-step-input" matInput formControlName="email" placeholder="Escribe un correo" required>
+            </mat-form-field>
+          </div>
+      </div>
+    </div>
+    <div class="ng-form-container__list--check">
+      <mat-checkbox formControlName="check" class="example-margin">Acepto los Términos y Condiciones y la Política de Privacidad</mat-checkbox>
+    </div>
+    <div class="ng-form-container__btn">
+        <button mat-button matStepperPrevious class="ng-form-container__btn--back">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>    
+          Atrás</button>
+        <button mat-button matStepperNext class="ng-form-container__btn--next" [disabled]="fourFormGroup.invalid" (click)="finish()">Continuar</button>
+      </div>
+</form>
+</section>
+

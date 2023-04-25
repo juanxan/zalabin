@@ -1,0 +1,55 @@
+.ng-table .mat-mdc-table thead{
+    background-color: #01365C;
+}
+.ng-form-container__btn--next{
+    background-color: #01365C;
+    color: #FFD05C;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: #00000029;
+    height: 45px;
+}
+.ng-table{
+    padding-bottom: 20vh;
+    &__filters{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        margin: 15px 0;
+        &--amount{
+            width: 46.5%;
+        }
+        &--aseguradora{
+            width: 28.1%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+        &--order{
+            width: 25.4%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+        mat-form-field{
+            height: 60px;
+        }
+    }
+    &__thead{
+        background-color: #01365C !important;
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    &__name{
+        font-weight: 600;
+    }
+    &__valorAnual{
+        font-weight: 600;
+    }
+}

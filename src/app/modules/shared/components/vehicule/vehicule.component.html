@@ -1,0 +1,18 @@
+<section class="ng-form-container">
+  <mat-spinner *ngIf="vehicle.data.vehicle.line === ''"></mat-spinner>
+</section>
+<section *ngIf="vehicle.data.vehicle.line !== ''" class="ng-form-container">
+    <div class="ng-card__item">
+      <h2 *ngIf="vehicle.data.vehicle.plate !== '' "> <strong>PLACA: {{vehicle.data.vehicle.plate}}</strong></h2>
+      <div class="ng-card__brand">
+        <strong>{{vehicle.data.vehicle.brand}} {{vehicle.data.vehicle.line}}</strong>
+      </div>
+      <div class="ng-card__description">
+        <div><span>Código Fasecolda:</span> {{vehicle.datatwo.vehicle.codification.code}}</div>
+        <div><span>Modelo:</span> {{vehicle.data.vehicle.model}}</div>
+        <div><span>Cilindraje:</span> {{vehicle.data.vehicle.vehicle_codification.cilindraje}} CC</div>
+        <div><span>Precio de referencia:</span> ${{vehicle.datatwo.vehicle.vehicle_risk.reference_price}} COP</div>
+      </div>
+      <button class="ng-zalabin__btn" (click)="toFirst()">Sí, es mi vehículo</button>
+    </div>
+  </section>

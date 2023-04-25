@@ -1,0 +1,32 @@
+
+<section *ngIf="!finish" class="container-form-ng">
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup" label="Sobre tu vehiculo" state="check">
+      <app-step-one [firstFormGroup]="firstFormGroup" [reference]="references" (eventSecondReference)="nextStepReference()"  (eventToReference)="changeToReference($event)"></app-step-one>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Sobre ti">
+      <app-step-two [secondFormGroup]="secondFormGroup" [reference]="references" (eventSecondGroup)="getVehiculo()" ></app-step-two>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup" label="Confirma tu vehículo">
+      <app-step-three (eventBackVehicle)="backVehicle()" (eventToVehicle)="changeVehicle($event)" [thirdFormGroup]="thirdFormGroup" [vehicle]="vehicle" [reference]="references" [vehicles]="vehicles"></app-step-three>
+    </mat-step>
+
+    <mat-step [stepControl]="fourFormGroup" label="Información del propietario">
+        <app-step-four [fourFormGroup]="fourFormGroup"  [reference]="references" (eventToFinish)="finalStep()" (eventToReference)="toFinish($event)"></app-step-four>
+    </mat-step>
+  </mat-stepper>
+</section>
+
+<section *ngIf="finish">
+  <!-- <app-aseguradora-table></app-aseguradora-table> -->
+  <iframe [src]="urlCliente" width="1040" height="800"></iframe>
+</section>
+
+<section *ngIf="cotiza" class="ng-cotiza">
+    <img src="./../../../assets/img/sombrero.png" alt="">
+    <p>¡Tu cotización está lista!</p>
+    <span>En el correo registrado encontrarás la cotización del seguro que elegiste y en menos de 24 horas uno de nuestros asesores te contactará para guiarte en los siguientes pasos.</span>
+    <button class="ng-zalabin__btn">Volver al inicio</button>
+</section>

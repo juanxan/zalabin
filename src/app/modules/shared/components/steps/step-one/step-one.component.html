@@ -1,0 +1,70 @@
+<section >
+    <form [formGroup]="firstFormGroup">
+      <div *ngIf="!reference" class="firstStep ng-form-container">
+        <h2 class="ng-form-container__title">Escribe tu placa</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Placa</mat-label>
+          <input class="ng-step-input" matInput placeholder="Escribe una placa" formControlName="placa" required>
+        </mat-form-field>
+        <div *ngIf="firstFormGroup.get('placa')?.invalid && (firstFormGroup.get('placa')?.dirty || firstFormGroup.get('placa')?.touched)">
+          <div class="error" *ngIf="firstFormGroup.get('placa')?.hasError('pattern')">La entrada no cumple con el formato requerido.</div>
+        </div>
+      </div>
+
+      <div *ngIf="reference" class="firstStep ng-form-container">
+        <h2 class="ng-form-container__title">Búsqueda por referencia</h2>
+        <div class="ng-form-container__list--item">
+          <div class="ng-form-container__list--label">
+            <span>1</span>Marca
+          </div>
+          <div class="ng-form-container__list--inputAll">
+            <mat-form-field appearance="outline">
+              <mat-label>Selecciona una marca</mat-label>
+              <mat-select formControlName="brand" (ngModelChange)="getReference()">
+                <mat-option [value]="brand" *ngFor="let brand of brands">{{brand}}</mat-option>
+              </mat-select>
+              <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="ng-form-container__list--item">
+          <div class="ng-form-container__list--label">
+            <span>2</span>Modelo
+          </div>
+          <div class="ng-form-container__list--inputAll">
+            <mat-form-field appearance="outline">
+              <mat-label>Selecciona un modelo</mat-label>
+              <mat-select formControlName="model" (ngModelChange)="getReference()">
+                <mat-option [value]="model" *ngFor="let model of yearsModel">{{model}}</mat-option>
+              </mat-select>
+              <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="ng-form-container__list--item">
+          <div class="ng-form-container__list--label">
+            <span>3</span>Referencia
+          </div>
+          <div class="ng-form-container__list--inputAll">
+            <mat-form-field appearance="outline">
+              <mat-label>Selecciona una referencia</mat-label>
+              <mat-select formControlName="reference">
+                <mat-option [value]="reference" *ngFor="let reference of references">{{reference}}</mat-option>
+              </mat-select>
+              <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="reference" class="ng-form-container__btn">
+        <button (click)="changeToReference()" mat-button class="ng-form-container__btn--back">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>    
+          Conozco el número de placa</button>
+        <button [disabled]="firstFormGroup.invalid" mat-button matStepperNext (click)="nextStepReference()" class="ng-form-container__btn--next">Continuar</button>
+      </div>
+      <div *ngIf="!reference" class="firstStep ng-form-container">
+        <button [disabled]="firstFormGroup.invalid" mat-button matStepperNext class="ng-form-container__btn--next">Continuar</button>
+        <a class="ng-form-container__km" (click)="changeToReference()">MI VEHÍCULO ES 0KM</a>
+      </div>
+    </form>
+</section>

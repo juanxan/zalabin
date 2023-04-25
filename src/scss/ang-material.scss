@@ -1,0 +1,112 @@
+.ng-step-input{
+    width: 536px;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+}
+.container-form-ng{
+    .mat-mdc-text-field-wrapper{
+        width: 536px;
+        border-radius: 10px;
+    }
+}
+.mat-step-header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .mat-step-header .mat-step-icon-selected {
+    background-color: #FFD05C;
+    width: 31px;
+    height: 31px;
+  }
+  .mat-step-header .mat-step-icon-selected .mat-icon {
+    font-size: 16px;
+    height: 16px;
+    width: 16px;
+    background: #01365C;
+    color: #01365C;
+    border-radius: 10px;
+}
+.mat-step-header .mat-step-icon-state-done{
+    background: #01365C;
+    .mat-icon {
+        color: #FFD05C;
+    }
+}
+.container-form-ng .ng-form-container__list--input .mat-mdc-form-field {
+    width: 100%;
+    .mat-mdc-text-field-wrapper{
+        width: 95%;
+    }
+}
+.container-form-ng .ng-form-container__list--inputAll .mat-mdc-form-field {
+    width: 100%;
+    .mat-mdc-text-field-wrapper{
+        width: 100%;
+    }
+}
+
+/*start Radio buttons*/
+.ng-form-container .ng-form-container__list .ng-form-container__list--item .ng-form-container__list--inputAll .mat-mdc-radio-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 31px;
+    .mat-mdc-radio-button{
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        height: 100%;
+        display: block;
+        border-radius: 3px;
+        width: 50%;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .mat-mdc-radio-checked{
+        background-color: #0290F5;
+        .mat-radio-3-input{
+            color: white;
+        }
+        .mdc-radio__background .mdc-radio__outer-circle {
+            border-color: white;
+          }
+        .mdc-radio__background .mdc-radio__inner-circle{
+            border-color: white;
+          }
+          .mdc-radio__background .mdc-radio__outer-circle:hover {
+            border-color: white;
+          }
+        .mdc-radio__background .mdc-radio__inner-circle:hover{
+            border-color: white;
+          }
+          .mdc-radio__background .mdc-radio__outer-circle:active {
+            border-color: white;
+          }
+        .mdc-radio__background .mdc-radio__inner-circle:active{
+            border-color: white;
+          }
+    }
+}
+.mat-mdc-radio-button.mat-accent{
+  --mdc-radio-selected-hover-icon-color: white
+}
+
+/*end Radio buttons*/
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+  /* Font color */
+  input.mat-input-element {
+    color: white;
+  }
+  .mat-mdc-select-arrow-wrapper {
+    display: none !important;
+  }
+  
+  .mat-form-field.mat-form-field .mat-form-field-suffix .mat-icon {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  .mat-mdc-radio-checked label {
+      color: white;
+  }

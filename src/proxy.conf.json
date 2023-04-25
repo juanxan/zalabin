@@ -1,0 +1,38 @@
+{
+    "/seguros/*": {
+      "target": "https://api2.agentemotor.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    },
+    "/seguros/co/*": {
+      "target": "https://apipro.agentemotor.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    },
+    "/app/*": {
+      "target": "https://api2.agentemotor.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    },
+    "/api/*":{
+      "target": "https://localhost:7015",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    },
+    "/v1/*":{
+      "target": "https://g7567x0zz2.execute-api.us-east-2.amazonaws.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    },
+    "/?format=json":{
+      "target": "https://api.ipify.org",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }

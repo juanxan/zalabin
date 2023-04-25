@@ -1,0 +1,23 @@
+<section>
+    <form [formGroup]="secondFormGroup" class="ng-form-container">
+        <h2 class="ng-form-container__title">Tipo de identificación</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Selecciona un tipo de identificación</mat-label>
+            <mat-select formControlName="identificationType">
+              <mat-option *ngFor="let identificacion of IdentificationType" [value]="identificacion.code">{{identificacion.description}}</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Identificación</mat-label>
+          <input class="ng-step-input" matInput formControlName="identification" placeholder="Escribe tu número de identificación" required>
+        </mat-form-field>
+
+        <div class="ng-form-container__btn">
+          <button mat-button matStepperPrevious class="ng-form-container__btn--back">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>    
+            Atrás</button>
+            <button (click)="vehiculosAdd()" mat-button matStepperNext [disabled]="secondFormGroup.invalid" class="ng-form-container__btn--next">Continuar</button>
+        </div>
+      </form>
+</section>

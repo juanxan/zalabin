@@ -1,0 +1,55 @@
+.ng-select{
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    box-shadow: 0px -3px 6px #00000029;
+    &__items{
+        width: 48.8%;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+    }
+    &__item{
+        width: 16.6%;
+        height: 100%;
+        border: 1px solid #D3D3D3;
+        border-radius: 10px;
+        &--img{
+            width: 100%;
+        }
+        span{
+            position: relative;
+            left: 126px;
+            z-index: 2;
+            bottom: 144px;
+        }
+        &-none{
+            background-color:#F8F8F8;
+            display: flex;
+            justify-content: center;
+            width: 16.6%;
+            height: 100%;
+            border: 1px solid #D3D3D3;
+            border-radius: 10px;
+            align-items: center;
+        }
+    }
+    &__actions{
+        width: 50.2%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        &--container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 2rem;
+        }
+    }
+}
